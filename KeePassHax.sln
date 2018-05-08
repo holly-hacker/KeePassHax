@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeePassHax", "KeePassHax\KeePassHax.csproj", "{CBE2DB6E-3640-4194-8782-342A6C24C275}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBE2DB6E-3640-4194-8782-342A6C24C275}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBE2DB6E-3640-4194-8782-342A6C24C275}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBE2DB6E-3640-4194-8782-342A6C24C275}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBE2DB6E-3640-4194-8782-342A6C24C275}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5AE05C82-D475-498F-BF57-216B0D077E7B}
+	EndGlobalSection
+EndGlobal
