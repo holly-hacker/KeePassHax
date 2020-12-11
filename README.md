@@ -12,9 +12,13 @@ Compile it with Visual Studio 2017 or higher ¯\\\_(ツ)\_/¯
 
 
 ## Usage
-Get yourself a nice managed DLL injector (like [this one](https://www.codeproject.com/articles/607352/injecting-net-assemblies-into-unmanaged-processes)) 
-and inject the DLL into the KeePass process. You do not need administrator permissions for this, so it can be ran from 
-the context of any application.
+If you already have a managed DLL injector (like
+[this one](https://www.codeproject.com/articles/607352/injecting-net-assemblies-into-unmanaged-processes)), you can
+build the KeePassHax project and inject the resulting DLL into the KeePass project. You do not need administrator
+permissions for this, so it can be ran from the context of any application.
+
+Alternatively, use the KeePassHax.Injector project to build a binary that, when run, injects itself into KeePass
+process.
 
 You can see it in action in [this video](https://youtu.be/J663mUBIzE0).
 
